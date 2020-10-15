@@ -1,0 +1,8 @@
+.frets{
+    display: grid;
+    grid-template: repeat(5 1fr)/ repeat(6 1fr);
+}
+.fret{
+    height: 20px;
+    width:20px;
+}
