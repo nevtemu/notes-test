@@ -1,8 +1,25 @@
 .frets{
     display: grid;
-    grid-template: repeat(5 1fr)/ repeat(6 1fr);
+    grid-template: repeat(6 1fr)/ repeat(5 1fr);
 }
 .fret{
     height: 20px;
     width:20px;
+    position: relative;
+    border-right: solid 1px;
 }
+/*отрисовка струны*/
+.fret:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-top: 1px solid black;
+    /* background: black; */
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  .question hr{
+    border-top: dotted 1px; 
+    margin-bottom: 5px;
+  }
