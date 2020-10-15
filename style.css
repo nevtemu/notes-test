@@ -4,9 +4,13 @@
 }
 .fret{
     height: 20px;
-    width:20px;
+    width:auto;
+    text-align: center;
+    font-weight: bold;
     position: relative;
+    border-left: solid 1px;
     border-right: solid 1px;
+    background-color: burlywood;
 }
 /*отрисовка струны*/
 .fret:before {
@@ -15,17 +19,21 @@
     top: 50%;
     left: 0;
     border-top: 1px solid black;
-    background: black;
+    /* background: black; */
     width: 100%;
     transform: translateY(-50%);
   }
   .question hr{
-    border-top: dotted 1px; 
+    border-top: solid 1px; 
     margin: 10px 0;
   }
   .question{
       padding: 10px;
       position: relative;
+  }
+  .exLines{
+      width:20px;
+      margin-left: 15px;
   }
   .note{
       border: solid 1px;

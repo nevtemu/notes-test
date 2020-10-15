@@ -16,11 +16,14 @@ const drawFrets = () => {
 drawFrets()
 const drawQuestion = () => {
     let a = "";
-    for(let i=1; i<=5; i++){
-        
-            a += `<hr>`;   
-    }
+    for(let i=1; i<=5; i++){a += `<hr>`;}
     document.getElementById("lines").innerHTML = a;
+    let b ="";
+    for(let i=1; i<=3; i++){b += `<hr>`;}
+    document.getElementById("exLines").innerHTML = b;
+    let c = "";
+    for (let i = 65; i<=71; i++) {c += `<input type="radio" name="answers" id="answer${i-64}"><label for="answer${i-64}" id="${String.fromCharCode(i)}">${String.fromCharCode(i)}</label>`;}// A-65, G-71
+        document.getElementById("notesList").innerHTML = c;
 }
 drawQuestion()
 const notes = [
@@ -32,27 +35,28 @@ const notes = [
     ["E1","F1",,"G1",]
 ]
 const notePositions = {
-    G3: "0px",
-    F3: "+5px",
-    E3: "+10px",
-    D3: "+15px",
-    C3: "+20px",
-    B3: "+25px",
-    A3: "+30px",
-    G2: "+35px",
-    F2: "+40px",
-    E2: "+45px",
-    D2: "+50px",
-    C2: "+55px",
-    B2: "+60px",
-    A2: "+65px",
-    G1: "+70px",
-    F1: "+75px",
-    E1: "+80px",
+    G3: "+8px",
+    F3: "+14px",
+    E3: "+20px",
+    D3: "+26px",
+    C3: "+32px",
+    B3: "+38px",
+    A3: "+44px",
+    G2: "+50px",
+    F2: "+56px",
+    E2: "+62px",
+    D2: "+68px",
+    C2: "+74px",
+    B2: "+80px",
+    A2: "+86px",
+    G1: "+92px",
+    F1: "+98px",
+    E1: "+104px",
 }
 const askQuestion = () => {
     let question;
     do {question = notes[getRandomNumber(0,5)][getRandomNumber(0,4)];
+    // do {question = notes[0][1];
     } while (question === undefined);
     document.getElementById("hint").innerHTML = question;
     console.log(notePositions[question])
