@@ -15,11 +15,24 @@
     top: 50%;
     left: 0;
     border-top: 1px solid black;
-    /* background: black; */
+    background: black;
     width: 100%;
     transform: translateY(-50%);
   }
   .question hr{
     border-top: dotted 1px; 
-    margin-bottom: 5px;
+    margin: 10px 0;
+  }
+  .question{
+      padding: 10px;
+      position: relative;
+  }
+  .note{
+      border: solid 1px;
+      border-radius: 15px;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      left: +30px;
+      top: +40px;
   }

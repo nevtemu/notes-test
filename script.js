@@ -20,7 +20,7 @@ const drawQuestion = () => {
         
             a += `<hr>`;   
     }
-    document.getElementById("question").innerHTML = a;
+    document.getElementById("lines").innerHTML = a;
 }
 drawQuestion()
 const notes = [
@@ -31,14 +31,33 @@ const notes = [
     ["A2",,"B2","C2",],
     ["E1","F1",,"G1",]
 ]
+const notePositions = {
+    G3: "0px",
+    F3: "+5px",
+    E3: "+10px",
+    D3: "+15px",
+    C3: "+20px",
+    B3: "+25px",
+    A3: "+30px",
+    G2: "+35px",
+    F2: "+40px",
+    E2: "+45px",
+    D2: "+50px",
+    C2: "+55px",
+    B2: "+60px",
+    A2: "+65px",
+    G1: "+70px",
+    F1: "+75px",
+    E1: "+80px",
+}
 const askQuestion = () => {
     let question;
-    do {
-        question = notes[getRandomNumber(0,5)][getRandomNumber(0,4)];
-        console.log(question);
-        document.getElementById("hint").innerHTML = question;
-        console.log(question === undefined);
+    do {question = notes[getRandomNumber(0,5)][getRandomNumber(0,4)];
     } while (question === undefined);
+    document.getElementById("hint").innerHTML = question;
+    console.log(notePositions[question])
+    console.log(typeof question)
+    document.getElementById("note").style.top = notePositions[question];
 }
 askQuestion()
 // const notes = [
