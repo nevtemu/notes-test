@@ -42,15 +42,15 @@
   }
   .exLines{
       width:20px;
-      margin-left: 45px;
+      margin-left: 65px;
   }
   .note{
-      border: solid 1px;
+      border: solid 2px;
       border-radius: 15px;
-      height: 10px;
-      width: 10px;
+      height: 9px;
+      width: 9px;
       position: absolute;
-      left: +59px;
+      left: +79px;
       top: +40px;
   }
 input[type=radio]{/*Hide html radio buttons*/
