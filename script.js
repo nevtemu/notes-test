@@ -1,28 +1,23 @@
-let correctAnswerNote, correctAnswerFret, answerNote, answerFret, totallyAnswered = 0, correctlyAnswered = 0;
+let correctAnswerNote, correctAnswerFret, answerNote, answerFret, totallyAnswered = 0, correctlyAnswered = 0, question;
 const checkAnswer = (code) => {
     let radios = document.getElementsByName("answers");
-  for (let i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) { // checks if any answer selected
-      totallyAnswered++;
-      document.getElementById("totallyAnswered").innerHTML = `Answered questions: ${totallyAnswered}`;
-    console.log(`correct: ${typeof correctAnswerFret} ${typeof correctAnswerNote} `)
-
+        totallyAnswered++;
+        document.getElementById("totallyAnswered").innerHTML = `Answered questions: ${totallyAnswered}`;
         answerNote = document.getElementById(radios[i].id).nextSibling.id;
-      answerFret = code.slice(4);
-      console.log(`answer: ${typeof answerFret} ${typeof answerNote} `)
-      if (answerNote == correctAnswerNote && answerFret == correctAnswerFret) { //correct answer
-        correctlyAnswered++;
-      } else { //wrong answer
-        // document.getElementById("textMistakes").innerHTML +=`[${question.replaceAll(" ","&nbsp")}&nbsp${correctAnswer.replaceAll(" ","&nbsp")}] `;
-      }
-      document.getElementById("correctAnswered").innerHTML =`Correct answers: ${Math.floor((correctlyAnswered / totallyAnswered) * 100)}%`;
-      askQuestion(); //automatically ask next question
+        answerFret = code.slice(4);
+        if (answerNote == correctAnswerNote && answerFret == correctAnswerFret) { //correct answer
+            correctlyAnswered++;
+        } else { //wrong answer
+            document.getElementById("textMistakes").innerHTML +=`${question} `;
+        }
+        document.getElementById("correctAnswered").innerHTML =`Correct answers: ${Math.floor((correctlyAnswered / totallyAnswered) * 100)}%`;
+        askQuestion(); 
+        }
     }
-  }
 }
-
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) ) + min; 
-
 const drawFrets = () => {
     let a = "";
     for(let i=1; i<=6; i++){
@@ -33,7 +28,6 @@ const drawFrets = () => {
     }
     document.getElementById("frets").innerHTML = a;
 }
-
 const drawQuestion = () => {
     let a = "";
     for(let i=1; i<=5; i++){a += `<hr>`;}
@@ -43,9 +37,8 @@ const drawQuestion = () => {
     document.getElementById("exLines").innerHTML = b;
     let c = "";
     for (let i = 65; i<=71; i++) {c += `<input type="radio" name="answers" id="answer${i-64}"><label for="answer${i-64}" id="${String.fromCharCode(i)}">${String.fromCharCode(i)}</label>`;}// A-65, G-71
-        document.getElementById("notesList").innerHTML = c;
+    document.getElementById("notesList").innerHTML = c;
 }
-
 const notes = [
     ["E3","F3",,"G3",],
     ["B3","C3",,"D3",],
@@ -74,7 +67,7 @@ const notePositions = {
     E1: "+104px",
 }
 const askQuestion = () => {
-    let question, x, y;
+    let x, y;
     do {
         x = getRandomNumber(0,5);
         y = getRandomNumber(0,4);
@@ -88,15 +81,3 @@ const askQuestion = () => {
     drawQuestion()
 }
 askQuestion()
-
-// Notes with diez
-// const notes = [
-//     ["E3","F3","F3#","G3","G3#"],
-//     ["B3","C3","C3#","D3","D3#"],
-//     ["G2",,"A3","A3#",],
-//     ["D2",,"E2","F2",],
-//     ["A2",,"B2","C2",],
-//     ["E1","F1",,"G1",]
-// ]
-
-

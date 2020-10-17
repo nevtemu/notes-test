@@ -13,7 +13,7 @@
     background-color: burlywood;
 }
 .hint{
-  display:none;
+    display:none;
 }
 /*отрисовка струны*/
 .fret:before {
@@ -22,55 +22,58 @@
     top: 50%;
     left: 0;
     border-top: 1px solid black;
-    /* background: black; */
     width: 100%;
     transform: translateY(-50%);
-  }
-  .question hr{
+}
+.question hr{
     border-top: solid 1px; 
     margin: 10px 0;
     z-index: -1;
-  }
-  .question{
-      padding: 10px;
-      position: relative;
-      background-image: url("./clef.png");
-      background-repeat: no-repeat;
-      z-index: 1;
-  }
-  .lines{
-      border-left: solid 1px;
-      border-right: solid 1px;
+}
+.question{
+    padding: 10px;
+    position: relative;
+    background-image: url("./clef.png");
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.lines{
+    border-left: solid 1px;
+    border-right: solid 1px;
 
+}
+.exLines{
+    width:20px;
+    margin-left: 65px;
+}
+.note{
+    border: solid 2px;
+    border-radius: 15px;
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    left: +79px;
+    top: +40px;
   }
-  .exLines{
-      width:20px;
-      margin-left: 65px;
-  }
-  .note{
-      border: solid 2px;
-      border-radius: 15px;
-      height: 9px;
-      width: 9px;
-      position: absolute;
-      left: +79px;
-      top: +40px;
-  }
-input[type=radio]{/*Hide html radio buttons*/
+input[type=radio]{  /*Hide html radio buttons*/
     position: absolute;
     visibility: hidden;
-  }
-  .notesList{
+}
+.notesList{
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       margin: 10px 0;
-  }
-  .notesList label{
-      background-color: aquamarine;
-      width: 50px;
+}
+.notesList label{
+      background-color: rgb(196, 236, 234);
+      width: 80px;
     text-align: center;
-  }
-  input[type=radio]:checked + label{
-    background-color: #0b5009;
-  }
+    border-radius: 10px;
+}
+input[type=radio]:checked + label{
+    background-color: #56c052;
+}
+.statistic{
+    margin: 20px;
+}
