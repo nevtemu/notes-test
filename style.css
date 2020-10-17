@@ -12,6 +12,9 @@
     border-right: solid 1px;
     background-color: burlywood;
 }
+.hint{
+  display:none;
+}
 /*отрисовка струны*/
 .fret:before {
     content: '';
