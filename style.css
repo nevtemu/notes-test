@@ -33,7 +33,7 @@
 .question{
     padding: 10px;
     position: relative;
-    background-image: url("./clef.png");
+    background-image: url("./src/clef.png");
     background-repeat: no-repeat;
     z-index: 1;
 }
